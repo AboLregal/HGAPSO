@@ -18,6 +18,11 @@ function y=Mutate(x,mu,VarMin,VarMax)
     nmu=ceil(mu*nVar);
     
     j=randsample(nVar,nmu);
+    [r,c]=size(x);
+    [rj,cj]=size(j);
+    if (r==1 & cj==1) || (c==1 & rj==1)
+        j=j';
+    end
     
     sigma=0.1*(VarMax-VarMin);
     
