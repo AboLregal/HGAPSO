@@ -27,7 +27,7 @@ function y=Mutate(x,mu,VarMin,VarMax)
     sigma=0.1*(VarMax-VarMin);
     
     y=x;
-    y(j)=x(j)+sigma*randn(size(j));
+    y(j)=x(j)+sigma(j)*randn(size(j));
     
     y=max(y,VarMin);
     y=min(y,VarMax);
